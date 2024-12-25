@@ -26,8 +26,8 @@ public class Bank {
     @Override
     public String toString() {
         return "Bank{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
+                "name='" + name +
+                ", address='" + address +
                 '}';
     }
 }
