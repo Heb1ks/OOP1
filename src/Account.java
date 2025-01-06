@@ -1,18 +1,9 @@
-public class Account {
-    private int accountNumber;
+public class Account extends AbstractEntity {
     private double balance;
 
-    public Account(int accountNumber, double balance) {
-        this.accountNumber = accountNumber;
+    public Account(int id, double balance) {
+        super(id);
         this.balance = balance;
-    }
-
-    public int getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
     }
 
     public double getBalance() {
@@ -25,9 +16,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "accountNumber=" + accountNumber +
-                ", balance=" + balance +
-                '}';
+        return super.toString() + ", Balance: " + balance;
     }
 }

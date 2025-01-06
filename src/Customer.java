@@ -1,8 +1,9 @@
-public class Customer {
+public class Customer extends AbstractEntity {
     private String name;
     private String email;
 
-    public Customer(String name, String email) {
+    public Customer(int id, String name, String email) {
+        super(id);
         this.name = name;
         this.email = email;
     }
@@ -25,9 +26,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "name='" + name +
-                ", email='" + email +
-                '}';
+        return super.toString() + ", Name: " + name + ", Email: " + email;
     }
 }
