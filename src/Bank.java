@@ -51,6 +51,35 @@ public class Bank {
     }
 
     @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (accounts != null ? accounts.hashCode() : 0);
+        result = 31 * result + (customers != null ? customers.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Bank other = (Bank) obj;
+        if (name == null) {
+            if (other.name != null) return false;
+        } else if (!name.equals(other.name)) return false;
+        if (address == null) {
+            if (other.address != null) return false;
+        } else if (!address.equals(other.address)) return false;
+        if (accounts == null) {
+            if (other.accounts != null) return false;
+        } else if (!accounts.equals(other.accounts)) return false;
+        if (customers == null) {
+            if (other.customers != null) return false;
+        } else if (!customers.equals(other.customers)) return false;
+        return true;
+    }
+
+    @Override
     public String toString() {
         return "Bank: " + name + ", Address: " + address;
     }
